@@ -1,0 +1,19 @@
+$fontsize:14px;
+body{
+  border:0;
+  padding:0;
+  margin:0;
+  font-size:$fontsize;
+}
+
+p{
+  line-height:30px;
+  a{
+    text-decoration: none;
+    color:#002a80;
+    &:hover{
+      color:#003399;
+      text-decoration:underline;
+    }
+  }
+}
