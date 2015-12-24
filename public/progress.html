@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>progress</title>
+    <style type="text/css">
+        div {
+            background: #ccc;
+            width: 10rem;
+            height: 1rem;
+        }
+
+        span {
+            height: 1rem;
+            display: inline-block;
+            background: #0077b3;
+            transition: width 1s;
+        }
+    </style>
+    <script type="text/javascript">
+        var i = 0;
+        var p = setInterval(function () {
+            progress.style.width = i + '%';
+            if (i == 100)clearInterval(p);
+            console.log(i);
+            i = i + 0.5;
+        }, 100);
+    </script>
+</head>
+<body>
+<div><span id="progress"></span></div>
+</body>
+</html>

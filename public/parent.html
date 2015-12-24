@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        var str = "http://www.baidu.com/";
+        $("img").each(function () {
+            $(this).attr("src", str + $(this).attr("src"));
+            //alert(str+$(this).attr("src"));
+        });
+    </script>
+    <!--<script type="text/javascript">-->
+    <!--window.onload = function () {-->
+    <!--var url = window.location.href;-->
+    <!--var div = document.createElement("div");-->
+    <!--div.innerHTML = url;-->
+    <!--document.body.appendChild(div);-->
+    <!--};-->
+    <!--</script>-->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $location) {
+            $scope.firstName = "John";
+//            $scope.lastName = $location.absUrl();
+        });
+    </script>
+    <style>
+        @font-face {
+            font-family: "huakang";
+            src: url('huakang.TTF') format('truetype');
+        }
+
+        .hua-font {
+            font-family: "huakang" !important;
+            font-size: 20px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+这里显示的是<span class="hua-font">登录失败</span>网页地址：
+<div contenteditable="true" ng-bind="$location.absUrl()"></div>
+<iframe src="child.html"></iframe>
+<img src="http://x.jd.com/file/images/logoSsmall.jpg" id="aa"/>
+</body>
+</html>

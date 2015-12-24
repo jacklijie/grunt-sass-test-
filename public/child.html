@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            top: 30%;
+            left: 30%;
+            opacity: 0;
+            font-size: 200px;
+            visibility: hidden;
+            position: absolute;
+        }
+
+        div.show {
+            animation: scaleOut .8s ease-in-out forwards;
+        }
+
+        @keyframes scaleOut {
+            0% {}
+            100% {
+                top: 45%;
+                left: 45%;
+                font-size: 20px;
+                opacity: .8;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function submit() {
+            console.log(document.getElementById("dd").className);
+            document.getElementById("dd").className = "show";
+            document.getElementById("dd").style.visibility = 'visible';
+            setTimeout(function () {
+                document.getElementById("dd").style.visibility = 'hidden';
+                document.getElementById("dd").className = "";
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+<button onclick="submit()">click</button>
+<div id="dd">提交成功</div>
+</body>
+</html>

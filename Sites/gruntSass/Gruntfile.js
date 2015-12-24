@@ -9,8 +9,8 @@ module.exports = function(grunt) {
         // Metadata.
         meta: {
             basePath: '../',
-            srcPath: '../assets/sass/',
-            deployPath: '../assets/css/'
+            srcPath: '../bootstrap-sass/stylesheets/',
+            deployPath: '../../public/stylesheets/'
         },
 
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -21,8 +21,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= meta.deployPath %>style.css': '<%= meta.srcPath %>style.scss',
-                    '<%= meta.deployPath %>ind.css': '<%= meta.srcPath %>index.scss'
+                    //'<%= meta.deployPath %>style.css': '<%= meta.srcPath %>style.scss',
+                    '<%= meta.deployPath %>sty.css': '<%= meta.srcPath %>style.scss'
                 },
                 options: {
                     sourcemap: 'true'

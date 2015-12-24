@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>slider封装</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <style type="text/css">
+        .slider, .slideres {
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-img {
+            position: absolute;
+            width: 9999px;
+            height: 400px;
+        }
+
+        .slider-img .slider-item {
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+
+        .slider-icon {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+        }
+
+        .slider-icon span {
+            margin: 0 2px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .slider-icon span.active {
+            background-color: #f60;
+        }
+
+        .slider-prev {
+            width: 40px;
+            height: 40px;
+            background: url(images/1.png) no-repeat;
+            position: absolute;
+            left: 0;
+            top: 180px;
+            cursor: pointer;
+        }
+
+        .slider-next {
+            width: 40px;
+            height: 40px;
+            background: url(images/2.png) no-repeat;
+            position: absolute;
+            right: 0;
+            top: 180px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider" id="s1">
+    <ul class="slider-img clearfix">
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/1.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/2.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/3.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/4.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/5.jpg">
+            </a>
+        </li>
+    </ul>
+    <div class="slider-icon"></div>
+    <div class="slider-prev"></div>
+    <div class="slider-next"></div>
+</div>
+
+<div class="slider" id="s2">
+    <ul class="slider-img clearfix">
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/1.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/2.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/3.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/4.jpg">
+            </a>
+        </li>
+        <li class="slider-item">
+            <a href="#">
+                <img src="images/5.jpg">
+            </a>
+        </li>
+    </ul>
+    <div class="slider-icon"></div>
+    <div class="slider-prev"></div>
+    <div class="slider-next"></div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.1.10.2.js"></script>
+<script type="text/javascript" src="js/slider1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#s1").slide({speed: 500, between: 2000, width: 600});
+        $("#s2").slide({speed: 1000, between: 3000, width: 600});
+//        slider.init("#s1", {speed: 500, between: 2000, width: 600});
+//        slider.init("#s2", {speed: 1000, between: 3000, width: 600});
+    })
+</script>
+</body>
+</html>
