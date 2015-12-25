@@ -14,20 +14,30 @@
             height: 1rem;
             display: inline-block;
             background: #0077b3;
-            transition: width 1s;
+            transition: width .1s;
         }
     </style>
     <script type="text/javascript">
-        var i = 0;
-        var p = setInterval(function () {
-            progress.style.width = i + '%';
-            if (i == 100)clearInterval(p);
-            console.log(i);
-            i = i + 0.5;
-        }, 100);
+        var i = 0, p, state = true;
+        function change() {
+            if (i <= 100)state = !state;
+            else state = true;
+            if (!state) {
+                p = setInterval(function () {
+                    progress.style.width = i + '%';
+                    if (i == 100)clearInterval(p);
+                    console.log(i);
+                    i = i + 1;
+                }, 100);
+            }
+            else {
+                clearInterval(p);
+            }
+        }
     </script>
 </head>
 <body>
 <div><span id="progress"></span></div>
+<button onclick="change()">Start/Stop</button>
 </body>
 </html>
